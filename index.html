@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jordan Sentosa</title>
+  <meta name="description" content="Personal website of Jordan Sentosa.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Apply saved theme before first paint to avoid a flash -->
+  <script>
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <h1>Jordan Sentosa</h1>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+          <span aria-hidden="true" class="theme-icon"></span>
+        </button>
+      </div>
+      <p class="headline">[One-line headline: e.g. Student, builder, and competitor interested in ___.]</p>
+      <ul class="social-links" aria-label="Links">
+        <li><a href="mailto:jrdn.sentosa@gmail.com">Email</a></li>
+        <li><a href="[Link]">GitHub</a></li>
+        <li><a href="[Link]">LinkedIn</a></li>
+        <li><a href="[Link]">Resume</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Sections">
+    <div class="container">
+      <ul>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#competitions">Competitions</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main" class="container">
+
+    <!-- ===================== EDUCATION ===================== -->
+    <section id="education" aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+
+      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
+      <article class="entry">
+        <div class="entry-head">
+          <h3>[School Name]</h3>
+          <p class="meta-right"><time>[Dates]</time></p>
+        </div>
+        <p class="subtitle">[Degree / Program]</p>
+        <p class="meta">[Location]</p>
+        <p class="notes">[Notes: GPA, relevant coursework, honors]</p>
+      </article>
+      <!-- END OF BLOCK -->
+
+      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
+      <article class="entry">
+        <div class="entry-head">
+          <h3>[School Name]</h3>
+          <p class="meta-right"><time>[Dates]</time></p>
+        </div>
+        <p class="subtitle">[Degree / Program]</p>
+        <p class="meta">[Location]</p>
+        <p class="notes">[Notes: GPA, relevant coursework, honors]</p>
+      </article>
+      <!-- END OF BLOCK -->
+    </section>
+
+    <!-- ===================== COMPETITIONS ===================== -->
+    <section id="competitions" aria-labelledby="competitions-title">
+      <h2 id="competitions-title">Competitions</h2>
+
+      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
+      <article class="entry">
+        <div class="entry-head">
+          <h3>[Competition Name]</h3>
+          <p class="meta-right"><time>[Date]</time></p>
+        </div>
+        <p class="subtitle">[Award / Placement]</p>
+        <p class="description">[Short description]</p>
+        <p class="links"><a href="[Link]">[Link]</a></p>
+      </article>
+      <!-- END OF BLOCK -->
+
+      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
+      <article class="entry">
+        <div class="entry-head">
+          <h3>[Competition Name]</h3>
+          <p class="meta-right"><time>[Date]</time></p>
+        </div>
+        <p class="subtitle">[Award / Placement]</p>
+        <p class="description">[Short description]</p>
+        <p class="links"><a href="[Link]">[Link]</a></p>
+      </article>
+      <!-- END OF BLOCK -->
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience</h2>
+
+      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
+      <article class="entry">
+        <div class="entry-head">
+          <h3>[Role]</h3>
+          <p class="meta-right"><time>[Dates]</time></p>
+        </div>
+        <p class="subtitle">[Company / Organization]</p>
+        <p class="meta">[Location]</p>
+        <ul class="bullets">
+          <li>[Bullet point: what you did and the result]</li>
+          <li>[Bullet point: what you did and the result]</li>
+          <li>[Bullet point: what you did and the result]</li>
+        </ul>
+      </article>
+      <!-- END OF BLOCK -->
+
+      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
+      <article class="entry">
+        <div class="entry-head">
+          <h3>[Role]</h3>
+          <p class="meta-right"><time>[Dates]</time></p>
+        </div>
+        <p class="subtitle">[Company / Organization]</p>
+        <p class="meta">[Location]</p>
+        <ul class="bullets">
+          <li>[Bullet point: what you did and the result]</li>
+          <li>[Bullet point: what you did and the result]</li>
+          <li>[Bullet point: what you did and the result]</li>
+        </ul>
+      </article>
+      <!-- END OF BLOCK -->
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+
+      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
+      <article class="entry">
+        <div class="entry-head">
+          <h3>[Project Name]</h3>
+        </div>
+        <!-- OPTIONAL: delete this figure if the project has no image.
+             Put images in the img/ folder and set src="img/your-file.png" -->
+        <figure class="project-image">
+          <img src="img/placeholder.svg" alt="[Describe the image, e.g. Screenshot of Project Name]" width="640" height="360" loading="lazy">
+        </figure>
+        <p class="description">[Short description]</p>
+        <ul class="tags" aria-label="Tech and tools">
+          <li>[Tech]</li>
+          <li>[Tool]</li>
+          <li>[Language]</li>
+        </ul>
+        <p class="links"><a href="[Link]">[Link]</a></p>
+      </article>
+      <!-- END OF BLOCK -->
+
+      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
+      <article class="entry">
+        <div class="entry-head">
+          <h3>[Project Name]</h3>
+        </div>
+        <p class="description">[Short description]</p>
+        <ul class="tags" aria-label="Tech and tools">
+          <li>[Tech]</li>
+          <li>[Tool]</li>
+          <li>[Language]</li>
+        </ul>
+        <p class="links"><a href="[Link]">[Link]</a></p>
+      </article>
+      <!-- END OF BLOCK -->
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> Jordan Sentosa</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
