@@ -4,35 +4,343 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jordan Sentosa</title>
-  <meta name="description" content="Personal website of Jordan Sentosa.">
-  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Jordan Sentosa: data science and computer science student at UNC Charlotte. Projects, experience, and competitions.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0B1026">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="css/style.css">
-  <!-- Apply saved theme before first paint to avoid a flash -->
-  <script>
-    try {
-      var t = localStorage.getItem("theme");
-      if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
-    } catch (e) {}
-  </script>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="container">
-      <div class="header-top">
-        <h1>Jordan Sentosa</h1>
-        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
-          <span aria-hidden="true" class="theme-icon"></span>
-        </button>
+  <header class="hero">
+    <div class="hero-top">
+      <div class="container hero-grid">
+        <img class="profile-photo" src="assets/profile.jpg" alt="Portrait of Jordan Sentosa" width="200" height="200">
+        <div class="hero-text">
+          <h1>Jordan Sentosa</h1>
+          <p class="headline">Data science and computer science student, builder, and hackathon competitor interested in AI, gaming, and robotics.</p>
+          <ul class="social-links" aria-label="Links">
+            <li><a href="mailto:jrdn.sentosa@gmail.com">Email</a></li>
+            <li><a href="https://github.com/jrdn-sentosa">GitHub</a></li>
+            <li><a href="https://linkedin.com/in/jordan-sentosa">LinkedIn</a></li>
+          </ul>
+        </div>
       </div>
-      <p class="headline">[One-line headline: e.g. Student, builder, and competitor interested in ___.]</p>
-      <ul class="social-links" aria-label="Links">
-        <li><a href="mailto:jrdn.sentosa@gmail.com">Email</a></li>
-        <li><a href="[Link]">GitHub</a></li>
-        <li><a href="[Link]">LinkedIn</a></li>
-        <li><a href="[Link]">Resume</a></li>
-      </ul>
+    </div>
+
+    <div class="skyline-wrap">
+      <svg class="skyline" viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" role="img"
+           aria-label="Night skyline blending Charlotte's Uptown towers with Singapore's Marina Bay Sands, the Supertrees at Gardens by the Bay and the Helix Bridge, reflected in the water below.">
+        <defs>
+          <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1B1F4B"/>
+            <stop offset="1" stop-color="#0B1026"/>
+          </linearGradient>
+          <linearGradient id="fadeGrad" gradientUnits="userSpaceOnUse" x1="0" y1="340" x2="0" y2="480">
+            <stop offset="0" stop-color="#fff" stop-opacity=".6"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+          <mask id="reflectFade" maskUnits="userSpaceOnUse" x="0" y="340" width="1200" height="140">
+            <rect x="0" y="340" width="1200" height="140" fill="url(#fadeGrad)"/>
+          </mask>
+          <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="2.5" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="reflectBlur" filterUnits="userSpaceOnUse" x="0" y="330" width="1200" height="150">
+            <feGaussianBlur stdDeviation="1.5 5"/>
+          </filter>
+        </defs>
+
+        <!-- Water + stars -->
+        <rect x="0" y="340" width="1200" height="140" fill="url(#waterGrad)"/>
+        <g id="stars"></g>
+
+        <!-- Reflection: the whole city, flipped about the horizon (y = 340), blurred and faded -->
+        <g mask="url(#reflectFade)">
+          <g filter="url(#reflectBlur)">
+            <use href="#city" transform="matrix(1 0 0 -1 0 680)"/>
+          </g>
+        </g>
+
+        <!-- Ripples that catch the lights -->
+        <g class="ripples" fill="none" stroke-linecap="round" stroke-width="1.5">
+          <path class="rp" stroke="#2DE2E6" d="M70 352h40"   style="--d:8s;--dl:-4s"/>
+          <path class="rp" stroke="#F6C35B" d="M262 352h36"  style="--d:7s;--dl:-1s"/>
+          <path class="rp" stroke="#F6C35B" d="M360 360h44"  style="--d:8s;--dl:-2s"/>
+          <path class="rp" stroke="#FF4FA3" d="M584 354h60"  style="--d:6s;--dl:-3s"/>
+          <path class="rp" stroke="#2DE2E6" d="M660 362h50"  style="--d:9s;--dl:-5s"/>
+          <path class="rp" stroke="#F6C35B" d="M820 352h90"  style="--d:8s;--dl:-2s"/>
+          <path class="rp" stroke="#F6C35B" d="M900 364h60"  style="--d:7s;--dl:-6s"/>
+          <path class="rp" stroke="#FF4FA3" d="M1050 354h50" style="--d:6s;--dl:-1s"/>
+          <path class="rp" stroke="#2DE2E6" d="M1100 360h56" style="--d:9s;--dl:-3s"/>
+          <path class="rp" stroke="#FF4FA3" d="M1120 372h40" style="--d:7s;--dl:-5s"/>
+        </g>
+
+        <!-- The skyline. Style rules: solid dark silhouettes; lights are small windows plus one
+             thin (1.6) glowing outline per landmark. Windows are generated by js/main.js
+             inside each .wz zone and clipped to the building named in data-clip. -->
+        <g id="city">
+          <!-- BACK LAYERS: two continuous walls of hazy filler buildings (sparse dim windows, no outlines), drawn behind
+               everything. They run from each outer edge to the ends of the Helix Bridge, getting lower toward it.
+               Far row: faint, lighter, taller. Middle row: slightly darker, lower. Both stay lighter than the landmarks (#070B1F). -->
+          <g id="back-far" fill="#1D2356">
+            <rect id="far-1" x="0" y="118" width="34" height="222"/>
+            <rect class="wz" data-clip="#far-1" data-d=".09" data-dim="" data-o=".2" fill="none" x="4" y="126" width="26" height="204"/>
+            <rect id="far-2" x="34" y="140" width="34" height="200"/>
+            <rect class="wz" data-clip="#far-2" data-d=".09" data-dim="" data-o=".2" fill="none" x="38" y="148" width="26" height="182"/>
+            <rect id="far-3" x="68" y="155" width="40" height="185"/>
+            <rect class="wz" data-clip="#far-3" data-d=".09" data-dim="" data-o=".2" fill="none" x="72" y="163" width="32" height="167"/>
+            <rect id="far-4" x="108" y="143" width="40" height="197"/>
+            <rect class="wz" data-clip="#far-4" data-d=".09" data-dim="" data-o=".2" fill="none" x="112" y="151" width="32" height="179"/>
+            <rect id="far-5" x="148" y="132" width="40" height="208"/>
+            <rect class="wz" data-clip="#far-5" data-d=".09" data-dim="" data-o=".2" fill="none" x="152" y="140" width="32" height="190"/>
+            <rect id="far-6" x="188" y="152" width="22" height="188"/>
+            <rect class="wz" data-clip="#far-6" data-d=".09" data-dim="" data-o=".2" fill="none" x="192" y="160" width="14" height="170"/>
+            <rect id="far-7" x="210" y="172" width="26" height="168"/>
+            <rect class="wz" data-clip="#far-7" data-d=".09" data-dim="" data-o=".2" fill="none" x="214" y="180" width="18" height="150"/>
+            <rect id="far-8" x="236" y="153" width="46" height="187"/>
+            <rect class="wz" data-clip="#far-8" data-d=".09" data-dim="" data-o=".2" fill="none" x="240" y="161" width="38" height="169"/>
+            <rect id="far-9" x="282" y="148" width="40" height="192"/>
+            <rect class="wz" data-clip="#far-9" data-d=".09" data-dim="" data-o=".2" fill="none" x="286" y="156" width="32" height="174"/>
+            <rect id="far-10" x="322" y="172" width="34" height="168"/>
+            <rect class="wz" data-clip="#far-10" data-d=".09" data-dim="" data-o=".2" fill="none" x="326" y="180" width="26" height="150"/>
+            <rect id="far-11" x="356" y="184" width="40" height="156"/>
+            <rect class="wz" data-clip="#far-11" data-d=".09" data-dim="" data-o=".2" fill="none" x="360" y="192" width="32" height="138"/>
+            <rect id="far-12" x="396" y="219" width="40" height="121"/>
+            <rect class="wz" data-clip="#far-12" data-d=".09" data-dim="" data-o=".2" fill="none" x="400" y="227" width="32" height="103"/>
+            <rect id="far-13" x="436" y="236" width="40" height="104"/>
+            <rect class="wz" data-clip="#far-13" data-d=".09" data-dim="" data-o=".2" fill="none" x="440" y="244" width="32" height="86"/>
+            <rect id="far-14" x="476" y="253" width="22" height="87"/>
+            <rect class="wz" data-clip="#far-14" data-d=".09" data-dim="" data-o=".2" fill="none" x="480" y="261" width="14" height="69"/>
+            <rect id="far-15" x="498" y="271" width="19" height="69"/>
+            <rect class="wz" data-clip="#far-15" data-d=".09" data-dim="" data-o=".2" fill="none" x="502" y="279" width="11" height="51"/>
+            <rect id="far-16" x="743" y="261" width="34" height="79"/>
+            <rect class="wz" data-clip="#far-16" data-d=".09" data-dim="" data-o=".2" fill="none" x="747" y="269" width="26" height="61"/>
+            <rect id="far-17" x="777" y="217" width="40" height="123"/>
+            <rect class="wz" data-clip="#far-17" data-d=".09" data-dim="" data-o=".2" fill="none" x="781" y="225" width="32" height="105"/>
+            <rect id="far-18" x="817" y="211" width="40" height="129"/>
+            <rect class="wz" data-clip="#far-18" data-d=".09" data-dim="" data-o=".2" fill="none" x="821" y="219" width="32" height="111"/>
+            <rect id="far-19" x="857" y="188" width="30" height="152"/>
+            <rect class="wz" data-clip="#far-19" data-d=".09" data-dim="" data-o=".2" fill="none" x="861" y="196" width="22" height="134"/>
+            <rect id="far-20" x="887" y="191" width="46" height="149"/>
+            <rect class="wz" data-clip="#far-20" data-d=".09" data-dim="" data-o=".2" fill="none" x="891" y="199" width="38" height="131"/>
+            <rect id="far-21" x="933" y="172" width="46" height="168"/>
+            <rect class="wz" data-clip="#far-21" data-d=".09" data-dim="" data-o=".2" fill="none" x="937" y="180" width="38" height="150"/>
+            <rect id="far-22" x="979" y="131" width="40" height="209"/>
+            <rect class="wz" data-clip="#far-22" data-d=".09" data-dim="" data-o=".2" fill="none" x="983" y="139" width="32" height="191"/>
+            <rect id="far-23" x="1019" y="139" width="22" height="201"/>
+            <rect class="wz" data-clip="#far-23" data-d=".09" data-dim="" data-o=".2" fill="none" x="1023" y="147" width="14" height="183"/>
+            <rect id="far-24" x="1041" y="133" width="30" height="207"/>
+            <rect class="wz" data-clip="#far-24" data-d=".09" data-dim="" data-o=".2" fill="none" x="1045" y="141" width="22" height="189"/>
+            <rect id="far-25" x="1071" y="152" width="40" height="188"/>
+            <rect class="wz" data-clip="#far-25" data-d=".09" data-dim="" data-o=".2" fill="none" x="1075" y="160" width="32" height="170"/>
+            <rect id="far-26" x="1111" y="136" width="22" height="204"/>
+            <rect class="wz" data-clip="#far-26" data-d=".09" data-dim="" data-o=".2" fill="none" x="1115" y="144" width="14" height="186"/>
+            <rect id="far-27" x="1133" y="143" width="22" height="197"/>
+            <rect class="wz" data-clip="#far-27" data-d=".09" data-dim="" data-o=".2" fill="none" x="1137" y="151" width="14" height="179"/>
+            <rect id="far-28" x="1155" y="143" width="30" height="197"/>
+            <rect class="wz" data-clip="#far-28" data-d=".09" data-dim="" data-o=".2" fill="none" x="1159" y="151" width="22" height="179"/>
+            <rect id="far-29" x="1185" y="119" width="15" height="221"/>
+          </g>
+          <g id="back-layer" fill="#0F1535">
+            <rect id="mid-1" x="0" y="201" width="36" height="139"/>
+            <rect class="wz" data-clip="#mid-1" data-d=".14" data-dim="" data-o=".3" fill="none" x="4" y="209" width="28" height="121"/>
+            <rect id="mid-2" x="36" y="181" width="26" height="159"/>
+            <rect class="wz" data-clip="#mid-2" data-d=".14" data-dim="" data-o=".3" fill="none" x="40" y="189" width="18" height="141"/>
+            <rect id="mid-3" x="62" y="187" width="42" height="153"/>
+            <rect class="wz" data-clip="#mid-3" data-d=".14" data-dim="" data-o=".3" fill="none" x="66" y="195" width="34" height="135"/>
+            <rect id="mid-4" x="104" y="212" width="36" height="128"/>
+            <rect class="wz" data-clip="#mid-4" data-d=".14" data-dim="" data-o=".3" fill="none" x="108" y="220" width="28" height="110"/>
+            <rect id="mid-5" x="140" y="187" width="30" height="153"/>
+            <rect class="wz" data-clip="#mid-5" data-d=".14" data-dim="" data-o=".3" fill="none" x="144" y="195" width="22" height="135"/>
+            <rect id="mid-6" x="170" y="194" width="22" height="146"/>
+            <rect class="wz" data-clip="#mid-6" data-d=".14" data-dim="" data-o=".3" fill="none" x="174" y="202" width="14" height="128"/>
+            <rect id="mid-7" x="192" y="215" width="22" height="125"/>
+            <rect class="wz" data-clip="#mid-7" data-d=".14" data-dim="" data-o=".3" fill="none" x="196" y="223" width="14" height="107"/>
+            <rect id="mid-8" x="214" y="192" width="30" height="148"/>
+            <rect class="wz" data-clip="#mid-8" data-d=".14" data-dim="" data-o=".3" fill="none" x="218" y="200" width="22" height="130"/>
+            <rect id="mid-9" x="244" y="207" width="30" height="133"/>
+            <rect class="wz" data-clip="#mid-9" data-d=".14" data-dim="" data-o=".3" fill="none" x="248" y="215" width="22" height="115"/>
+            <rect id="mid-10" x="274" y="221" width="36" height="119"/>
+            <rect class="wz" data-clip="#mid-10" data-d=".14" data-dim="" data-o=".3" fill="none" x="278" y="229" width="28" height="101"/>
+            <rect id="mid-11" x="310" y="229" width="42" height="111"/>
+            <rect class="wz" data-clip="#mid-11" data-d=".14" data-dim="" data-o=".3" fill="none" x="314" y="237" width="34" height="93"/>
+            <rect id="mid-12" x="352" y="237" width="26" height="103"/>
+            <rect class="wz" data-clip="#mid-12" data-d=".14" data-dim="" data-o=".3" fill="none" x="356" y="245" width="18" height="85"/>
+            <rect id="mid-13" x="378" y="244" width="30" height="96"/>
+            <rect class="wz" data-clip="#mid-13" data-d=".14" data-dim="" data-o=".3" fill="none" x="382" y="252" width="22" height="78"/>
+            <rect id="mid-14" x="408" y="251" width="18" height="89"/>
+            <rect class="wz" data-clip="#mid-14" data-d=".14" data-dim="" data-o=".3" fill="none" x="412" y="259" width="10" height="71"/>
+            <rect id="mid-15" x="426" y="254" width="36" height="86"/>
+            <rect class="wz" data-clip="#mid-15" data-d=".14" data-dim="" data-o=".3" fill="none" x="430" y="262" width="28" height="68"/>
+            <rect id="mid-16" x="462" y="275" width="22" height="65"/>
+            <rect class="wz" data-clip="#mid-16" data-d=".14" data-dim="" data-o=".3" fill="none" x="466" y="283" width="14" height="47"/>
+            <rect id="mid-17" x="484" y="283" width="18" height="57"/>
+            <rect class="wz" data-clip="#mid-17" data-d=".14" data-dim="" data-o=".3" fill="none" x="488" y="291" width="10" height="39"/>
+            <rect id="mid-18" x="502" y="293" width="15" height="47"/>
+            <rect id="mid-19" x="743" y="287" width="22" height="53"/>
+            <rect class="wz" data-clip="#mid-19" data-d=".14" data-dim="" data-o=".3" fill="none" x="747" y="295" width="14" height="35"/>
+            <rect id="mid-20" x="765" y="272" width="26" height="68"/>
+            <rect class="wz" data-clip="#mid-20" data-d=".14" data-dim="" data-o=".3" fill="none" x="769" y="280" width="18" height="50"/>
+            <rect id="mid-21" x="791" y="255" width="22" height="85"/>
+            <rect class="wz" data-clip="#mid-21" data-d=".14" data-dim="" data-o=".3" fill="none" x="795" y="263" width="14" height="67"/>
+            <rect id="mid-22" x="813" y="239" width="42" height="101"/>
+            <rect class="wz" data-clip="#mid-22" data-d=".14" data-dim="" data-o=".3" fill="none" x="817" y="247" width="34" height="83"/>
+            <rect id="mid-23" x="855" y="220" width="22" height="120"/>
+            <rect class="wz" data-clip="#mid-23" data-d=".14" data-dim="" data-o=".3" fill="none" x="859" y="228" width="14" height="102"/>
+            <rect id="mid-24" x="877" y="232" width="42" height="108"/>
+            <rect class="wz" data-clip="#mid-24" data-d=".14" data-dim="" data-o=".3" fill="none" x="881" y="240" width="34" height="90"/>
+            <rect id="mid-25" x="919" y="221" width="30" height="119"/>
+            <rect class="wz" data-clip="#mid-25" data-d=".14" data-dim="" data-o=".3" fill="none" x="923" y="229" width="22" height="101"/>
+            <rect id="mid-26" x="949" y="213" width="26" height="127"/>
+            <rect class="wz" data-clip="#mid-26" data-d=".14" data-dim="" data-o=".3" fill="none" x="953" y="221" width="18" height="109"/>
+            <rect id="mid-27" x="975" y="214" width="22" height="126"/>
+            <rect class="wz" data-clip="#mid-27" data-d=".14" data-dim="" data-o=".3" fill="none" x="979" y="222" width="14" height="108"/>
+            <rect id="mid-28" x="997" y="210" width="26" height="130"/>
+            <rect class="wz" data-clip="#mid-28" data-d=".14" data-dim="" data-o=".3" fill="none" x="1001" y="218" width="18" height="112"/>
+            <rect id="mid-29" x="1023" y="196" width="36" height="144"/>
+            <rect class="wz" data-clip="#mid-29" data-d=".14" data-dim="" data-o=".3" fill="none" x="1027" y="204" width="28" height="126"/>
+            <rect id="mid-30" x="1059" y="189" width="36" height="151"/>
+            <rect class="wz" data-clip="#mid-30" data-d=".14" data-dim="" data-o=".3" fill="none" x="1063" y="197" width="28" height="133"/>
+            <rect id="mid-31" x="1095" y="210" width="26" height="130"/>
+            <rect class="wz" data-clip="#mid-31" data-d=".14" data-dim="" data-o=".3" fill="none" x="1099" y="218" width="18" height="112"/>
+            <rect id="mid-32" x="1121" y="181" width="26" height="159"/>
+            <rect class="wz" data-clip="#mid-32" data-d=".14" data-dim="" data-o=".3" fill="none" x="1125" y="189" width="18" height="141"/>
+            <rect id="mid-33" x="1147" y="184" width="30" height="156"/>
+            <rect class="wz" data-clip="#mid-33" data-d=".14" data-dim="" data-o=".3" fill="none" x="1151" y="192" width="22" height="138"/>
+            <rect id="mid-34" x="1177" y="192" width="23" height="148"/>
+            <rect class="wz" data-clip="#mid-34" data-d=".14" data-dim="" data-o=".3" fill="none" x="1181" y="200" width="15" height="130"/>
+          </g>
+          <!-- National Stadium (Singapore): wide shallow dome with a lattice of thin ribs on a low base ring of lit openings.
+               Dark silhouette, dim ribs, drawn behind the bridge so the bridge stays the focal point. -->
+          <g id="stadium">
+            <path id="stadium-body" fill="#070B1F" d="M522 340V316H528Q630 212 732 316H738V340Z"/>
+            <rect class="wz" data-clip="#stadium-body" data-d=".8" data-dim="" data-o=".55" fill="none" x="530" y="322" width="200" height="5"/>
+            <path class="lit" fill="none" stroke="#D8DBF2" stroke-width="1.6" stroke-opacity=".18" stroke-linecap="butt" filter="url(#glow)" d="M528 316Q630 212 732 316M556.6 316Q630 241.1 703.4 316M585.1 316Q630 270.2 674.9 316M546.4 316Q568.6 287.6 604.9 267.1M572.9 316Q588.1 286.7 612.9 265.5M599.4 316Q607.5 286.2 620.8 264.4M630 316Q630 286 630 264M660.6 316Q652.5 286.2 639.2 264.4M687.1 316Q671.9 286.7 647.1 265.5M713.6 316Q691.4 287.6 655.1 267.1"/>
+          </g>
+          <!-- Duke Energy Center: plain rectangular tower, square frame crown with a V inside -->
+          <g id="duke" transform="translate(40 0)">
+            <rect id="duke-body" fill="#070B1F" x="60" y="190" width="48" height="150"/>
+            <rect class="wz" data-clip="#duke-body" data-d=".5" fill="none" x="65" y="246" width="38" height="84"/>
+            <g class="lit" fill="none" stroke="#2DE2E6" stroke-width="1.6" filter="url(#glow)">
+              <path stroke-linejoin="miter" d="M60.800 190.800H107.200V238.200H60.800Z"/>
+              <path stroke-linejoin="round" d="M60.800 190.800L84 237.800L107.200 190.800"/>
+            </g>
+          </g>
+          <!-- One Wells Fargo Center: rounded top, outlined in pink. Centred in the gap between Duke Energy and Bank of America; slightly shorter than Duke. -->
+          <g id="wellsfargo">
+            <path id="wellsfargo-body" fill="#070B1F" d="M197 340V222Q197 206 219 206Q241 206 241 222V340Z"/>
+            <rect class="wz" data-clip="#wellsfargo-body" data-d=".5" fill="none" x="202" y="230" width="34" height="100"/>
+            <path class="lit" fill="none" stroke="#FF4FA3" stroke-width="1.6" filter="url(#glow)"
+                  d="M197.800 222Q197.800 206.800 219 206.800Q240.200 206.800 240.200 222"/>
+          </g>
+          <!-- Bank of America Corporate Center: tallest, symmetric, three setbacks -->
+          <g id="bofa" transform="translate(40 0)">
+            <path id="bofa-body" fill="#070B1F" d="M250 340V250H254V190H258V140H262V108H298V140H302V190H306V250H310V340Z"/>
+            <rect class="wz" data-clip="#bofa-body" data-d=".5" fill="none" x="255" y="258" width="50" height="72"/>
+            <rect class="wz" data-clip="#bofa-body" data-d=".5" fill="none" x="259" y="198" width="42" height="44"/>
+            <rect class="wz" data-clip="#bofa-body" data-d=".5" fill="none" x="263" y="148" width="34" height="34"/>
+            <rect class="wz" data-clip="#bofa-body" data-d=".5" fill="none" x="267" y="114" width="26" height="20"/>
+            <!-- crown: narrow pointed cluster of thin rods standing on the roofline -->
+            <path class="lit crown" fill="none" stroke="#F4F7FF" stroke-width="1.6" filter="url(#glow)"
+                  d="M270 108V94M273.400 108V80M276.700 108V68M280 108V58M283.300 108V68M286.600 108V80M290 108V94"/>
+          </g>
+          <!-- Hearst Tower: shorter, a few setbacks, small rounded crown -->
+          <g id="hearst" transform="translate(40 0)">
+            <path id="hearst-body" fill="#070B1F" d="M350 340V230H355V190H360V165Q360 148 384 148Q408 148 408 165V190H413V230H418V340Z"/>
+            <rect class="wz" data-clip="#hearst-body" data-d=".5" fill="none" x="355" y="238" width="58" height="92"/>
+            <rect class="wz" data-clip="#hearst-body" data-d=".5" fill="none" x="360" y="197" width="48" height="26"/>
+            <rect class="wz" data-clip="#hearst-body" data-d=".5" fill="none" x="365" y="172" width="38" height="12"/>
+            <path class="lit" fill="none" stroke="#F6C35B" stroke-width="1.6" filter="url(#glow)"
+                  d="M360.800 165Q360.800 148.800 384 148.800Q407.200 148.800 407.200 165"/>
+          </g>
+          <!-- LYNX light rail: slim dark train on a low elevated track across the Charlotte side, below the landmarks' windows.
+               Slides slowly left to right and loops (CSS animation .train, off under prefers-reduced-motion). Clipped to the track. -->
+          <g id="lynx">
+            <clipPath id="lynx-clip"><rect x="0" y="320" width="523" height="22"/></clipPath>
+            <rect x="0" y="338.400" width="523" height="1.600" fill="#070B1F"/>
+            <g clip-path="url(#lynx-clip)">
+              <g class="train" fill="#070B1F">
+                <rect x="0" y="331" width="30" height="7.400" rx="1.800"/>
+                <rect x="32" y="331" width="30" height="7.400" rx="1.800"/>
+                <g fill="#FFE9B0" opacity=".9">
+                  <rect x="3" y="333.400" width="2.400" height="2.600"/><rect x="8.200" y="333.400" width="2.400" height="2.600"/>
+                  <rect x="13.400" y="333.400" width="2.400" height="2.600"/><rect x="18.600" y="333.400" width="2.400" height="2.600"/>
+                  <rect x="23.800" y="333.400" width="2.400" height="2.600"/>
+                  <rect x="35" y="333.400" width="2.400" height="2.600"/><rect x="40.200" y="333.400" width="2.400" height="2.600"/>
+                  <rect x="45.400" y="333.400" width="2.400" height="2.600"/><rect x="50.600" y="333.400" width="2.400" height="2.600"/>
+                  <rect x="55.800" y="333.400" width="2.400" height="2.600"/>
+                </g>
+              </g>
+            </g>
+          </g>
+          <!-- Helix Bridge: arched lit walkway, back strand (dim, first) and front strand (bright, last) -->
+          <g id="helix">
+            <g fill="#070B1F">
+              <rect x="517" y="326" width="6" height="14"/><rect x="737" y="326" width="6" height="14"/>
+              <rect x="578.8" y="320" width="2.4" height="20"/><rect x="628.8" y="318" width="2.4" height="22"/><rect x="678.8" y="320" width="2.4" height="20"/>
+            </g>
+            <path fill="none" stroke="#FF4FA3" stroke-width="1.6" stroke-opacity=".5" stroke-linejoin="round" d="M520 326L522 323.2L524 320.7L526 318.5L528 316.9L530 316L532 315.7L534 316.2L536 317.4L538 319.1L540 321.2L542 323.5L544 325.8L546 328L548 329.7L550 330.9L552 331.4L554 331.2L556 330.3L558 328.7L560 326.5L562 324L564 321.3L566 318.6L568 316.1L570 314L572 312.4L574 311.5L576 311.4L578 311.9L580 313.2L582 314.9L584 317.1L586 319.5L588 321.9L590 324.1L592 326L594 327.2L596 327.8L598 327.7L600 326.9L602 325.4L604 323.4L606 321L608 318.4L610 315.8L612 313.4L614 311.4L616 310L618 309.2L620 309.2L622 309.9L624 311.2L626 313.1L628 315.5L630 318L632 320.5L634 322.9L636 324.8L638 326.2L640 327L642 327L644 326.3L646 325L648 323.1L650 320.9L652 318.4L654 315.9L656 313.7L658 311.8L660 310.5L662 309.9L664 310L666 310.8L668 312.3L670 314.4L672 316.9L674 319.5L676 322.2L678 324.7L680 326.8L682 328.3L684 329.2L686 329.3L688 328.8L690 327.6L692 325.8L694 323.7L696 321.3L698 318.9L700 316.8L702 315.1L704 313.9L706 313.4L708 313.6L710 314.5L712 316.1L714 318.2L716 320.8L718 323.5L720 326.3L722 328.8L724 331L726 332.6L728 333.5L730 333.8L732 333.3L734 332.1L736 330.4L738 328.3L740 326"/>
+            <path class="lit" fill="none" stroke="#F6C35B" stroke-width="1.6" stroke-linejoin="round" filter="url(#glow)" d="M520 326L522 325.8L524 325.5L526 325.3L528 325.1L530 324.9L532 324.6L534 324.4L536 324.2L538 324L540 323.7L542 323.5L544 323.3L546 323.1L548 322.9L550 322.7L552 322.5L554 322.3L556 322.1L558 321.9L560 321.7L562 321.5L564 321.3L566 321.1L568 320.9L570 320.8L572 320.6L574 320.4L576 320.3L578 320.1L580 320L582 319.8L584 319.7L586 319.5L588 319.4L590 319.3L592 319.1L594 319L596 318.9L598 318.8L600 318.7L602 318.6L604 318.5L606 318.5L608 318.4L610 318.3L612 318.3L614 318.2L616 318.2L618 318.1L620 318.1L622 318.1L624 318L626 318L628 318L630 318L632 318L634 318L636 318L638 318.1L640 318.1L642 318.1L644 318.2L646 318.2L648 318.3L650 318.3L652 318.4L654 318.5L656 318.5L658 318.6L660 318.7L662 318.8L664 318.9L666 319L668 319.1L670 319.3L672 319.4L674 319.5L676 319.7L678 319.8L680 320L682 320.1L684 320.3L686 320.4L688 320.6L690 320.8L692 320.9L694 321.1L696 321.3L698 321.5L700 321.7L702 321.9L704 322.1L706 322.3L708 322.5L710 322.7L712 322.9L714 323.1L716 323.3L718 323.5L720 323.7L722 324L724 324.2L726 324.4L728 324.6L730 324.9L732 325.1L734 325.3L736 325.5L738 325.8L740 326"/>
+            <path class="lit" fill="none" stroke="#2DE2E6" stroke-width="1.6" stroke-linejoin="round" filter="url(#glow)" d="M520 326L522 328.3L524 330.4L526 332.1L528 333.3L530 333.8L532 333.5L534 332.6L536 331L538 328.8L540 326.3L542 323.5L544 320.8L546 318.2L548 316.1L550 314.5L552 313.6L554 313.4L556 313.9L558 315.1L560 316.8L562 318.9L564 321.3L566 323.7L568 325.8L570 327.6L572 328.8L574 329.3L576 329.2L578 328.3L580 326.8L582 324.7L584 322.2L586 319.5L588 316.9L590 314.4L592 312.3L594 310.8L596 310L598 309.9L600 310.5L602 311.8L604 313.7L606 315.9L608 318.4L610 320.9L612 323.1L614 325L616 326.3L618 327L620 327L622 326.2L624 324.8L626 322.9L628 320.5L630 318L632 315.5L634 313.1L636 311.2L638 309.9L640 309.2L642 309.2L644 310L646 311.4L648 313.4L650 315.8L652 318.4L654 321L656 323.4L658 325.4L660 326.9L662 327.7L664 327.8L666 327.2L668 326L670 324.1L672 321.9L674 319.5L676 317.1L678 314.9L680 313.2L682 311.9L684 311.4L686 311.5L688 312.4L690 314L692 316.1L694 318.6L696 321.3L698 324L700 326.5L702 328.7L704 330.3L706 331.2L708 331.4L710 330.9L712 329.7L714 328L716 325.8L718 323.5L720 321.2L722 319.1L724 317.4L726 316.2L728 315.7L730 316L732 316.9L734 318.5L736 320.7L738 323.2L740 326"/>
+          </g>
+          <!-- Marina Bay Sands: three separate towers (sky between them), flat SkyPark -->
+          <g id="mbs">
+            <polygon id="mbs-t1" fill="#070B1F" points="801,340 804,300 804,152 852,152 852,300 855,340"/>
+            <polygon id="mbs-t2" fill="#070B1F" points="863,340 866,300 866,152 924,152 924,300 927,340"/>
+            <polygon id="mbs-t3" fill="#070B1F" points="935,340 938,300 938,152 1008,152 1008,300 1011,340"/>
+            <rect class="wz" data-clip="#mbs-t1" data-d=".62" fill="none" x="808" y="160" width="34" height="170"/>
+            <rect class="wz" data-clip="#mbs-t2" data-d=".62" fill="none" x="870" y="160" width="44" height="170"/>
+            <rect class="wz" data-clip="#mbs-t3" data-d=".62" fill="none" x="942" y="160" width="56" height="170"/>
+            <!-- pale curved edge along the right side of each tower, inside its silhouette -->
+            <g fill="none" stroke="#D8DBF2" stroke-width="1.6" stroke-opacity=".8">
+              <path d="M847 158C847 230 849 295 851 334"/>
+              <path d="M919 158C919 230 921 295 923 334"/>
+              <path d="M1003 158C1003 230 1005 295 1007 334"/>
+            </g>
+            <!-- SkyPark: one long flat boat-shaped deck, overhanging right and tapering to a point -->
+            <path id="mbs-deck" fill="#070B1F" d="M804 145Q804 138 812 138H1004Q1026 138 1034 145Q1018 152 992 152H812Q804 152 804 145Z"/>
+            <g class="lit crown" fill="none" stroke-width="1.6" filter="url(#glow)" style="--d:9s">
+              <path stroke="#F6C35B" d="M805 144Q806 138.800 812 138.800H1004Q1025 138.800 1033 145"/>
+            </g>
+            <path d="M811 152H992Q1018 152 1034 145" fill="none" stroke="#D8DBF2" stroke-opacity=".75" stroke-width="1.6"/>
+          </g>
+          <!-- Supertrees (unchanged from the previous version) -->
+          <g id="supertrees">
+            <g fill="#070B1F">
+              <polygon points="1053,340 1056.500,244 1063.500,244 1067,340"/>
+              <polygon points="1109,340 1112.500,216 1119.500,216 1123,340"/>
+              <polygon points="1157,340 1160.500,268 1167.500,268 1171,340"/>
+              <path d="M1056 244C1054 230 1042 222 1030 214H1090C1078 222 1066 230 1064 244Z"/>
+              <path d="M1112 216C1110 202 1094 194 1080 186H1152C1138 194 1122 202 1120 216Z"/>
+              <path d="M1160 268C1158 254 1148 246 1137 238H1191C1180 246 1170 254 1168 268Z"/>
+            </g>
+            <g class="lit" fill="none" stroke="#2DE2E6" filter="url(#glow)">
+              <ellipse cx="1060" cy="214" rx="30" ry="3.500" fill="#070B1F" stroke-width="1.8"/>
+              <path stroke-width=".9" d="M1056 244C1054 230 1042 222 1030 214M1058 244C1056 230 1048 222 1042 214M1059.300 244C1058 230 1054 222 1054 214M1060.700 244C1062 230 1066 222 1066 214M1062 244C1064 230 1072 222 1078 214M1064 244C1066 230 1078 222 1090 214"/>
+            </g>
+            <g class="lit" fill="none" stroke="#FF4FA3" filter="url(#glow)">
+              <ellipse cx="1116" cy="186" rx="36" ry="3.500" fill="#070B1F" stroke-width="1.8"/>
+              <path stroke-width=".9" d="M1112 216C1110 202 1094 194 1080 186M1113.300 216C1112 202 1102 194 1092 186M1114.700 216C1114 202 1110 194 1108 186M1116 216C1116 202 1116 194 1116 186M1117.300 216C1118 202 1122 194 1124 186M1118.700 216C1120 202 1130 194 1140 186M1120 216C1122 202 1138 194 1152 186"/>
+            </g>
+            <g class="lit" fill="none" stroke="#2DE2E6" filter="url(#glow)">
+              <ellipse cx="1164" cy="238" rx="27" ry="3.500" fill="#070B1F" stroke-width="1.8"/>
+              <path stroke-width=".9" d="M1160 268C1158 254 1148 246 1137 238M1161.300 268C1160 254 1153 246 1146 238M1162.700 268C1162 254 1159 246 1155 238M1164 268C1164 254 1164 246 1164 238M1165.300 268C1166 254 1169 246 1173 238M1166.700 268C1168 254 1175 246 1182 238M1168 268C1170 254 1180 246 1191 238"/>
+            </g>
+            <g fill="none" stroke="#2DE2E6" stroke-width="1.5" stroke-dasharray="2 9" opacity=".55">
+              <path d="M1060 340V246"/><path d="M1116 340V218"/><path d="M1164 340V270"/>
+            </g>
+          </g>
+        </g>
+
+        <!-- Horizon line -->
+        <rect x="0" y="340" width="1200" height="1.5" fill="#2DE2E6" opacity=".5"/>
+      </svg>
     </div>
   </header>
 
@@ -49,144 +357,380 @@
 
   <main id="main" class="container">
 
-    <!-- ===================== EDUCATION ===================== -->
     <section id="education" aria-labelledby="education-title">
       <h2 id="education-title">Education</h2>
+      <div class="entries">
 
-      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
-      <article class="entry">
-        <div class="entry-head">
-          <h3>[School Name]</h3>
-          <p class="meta-right"><time>[Dates]</time></p>
-        </div>
-        <p class="subtitle">[Degree / Program]</p>
-        <p class="meta">[Location]</p>
-        <p class="notes">[Notes: GPA, relevant coursework, honors]</p>
-      </article>
-      <!-- END OF BLOCK -->
+        <article class="entry">
+          <div class="entry-head">
+            <h3>University of North Carolina at Charlotte</h3>
+            <p class="meta-right"><time>Aug 2024 &ndash; May 2028</time></p>
+          </div>
+          <p class="subtitle">B.S. Data Science &amp; B.S. Computer Science &middot; GPA 4.0/4.0</p>
+          <p class="meta">Charlotte, NC</p>
+          <p class="notes">Concentration in AI, Gaming, and Robotics; minor in Mathematics.</p>
+          <p class="notes">Chancellor&rsquo;s List every semester (Fall 2024 &ndash; Spring 2026).</p>
+        </article>
 
-      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
-      <article class="entry">
-        <div class="entry-head">
-          <h3>[School Name]</h3>
-          <p class="meta-right"><time>[Dates]</time></p>
-        </div>
-        <p class="subtitle">[Degree / Program]</p>
-        <p class="meta">[Location]</p>
-        <p class="notes">[Notes: GPA, relevant coursework, honors]</p>
-      </article>
-      <!-- END OF BLOCK -->
+        <article class="entry">
+          <div class="entry-head">
+            <h3>University of North Carolina at Charlotte</h3>
+            <p class="meta-right"><time>Aug 2026 &ndash; May 2029</time></p>
+          </div>
+          <p class="subtitle">M.S. Data Science and Business Analytics (Early Entry Program)</p>
+          <p class="meta">Charlotte, NC</p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3>CIEE Summer Global Internship Program</h3>
+            <p class="meta-right"><time>Jun 2025 &ndash; Aug 2025</time></p>
+          </div>
+          <p class="subtitle">Council on International Educational Exchange &middot; GPA 4.0/4.0</p>
+          <p class="meta">Singapore</p>
+          <p class="notes">280+ hours as a Software Engineering Intern at Variantz, with professional development workshops at Singapore Management University and Nanyang Technological University.</p>
+        </article>
+
+      </div>
     </section>
 
-    <!-- ===================== COMPETITIONS ===================== -->
     <section id="competitions" aria-labelledby="competitions-title">
       <h2 id="competitions-title">Competitions</h2>
+      <div class="entries">
 
-      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
-      <article class="entry">
-        <div class="entry-head">
-          <h3>[Competition Name]</h3>
-          <p class="meta-right"><time>[Date]</time></p>
-        </div>
-        <p class="subtitle">[Award / Placement]</p>
-        <p class="description">[Short description]</p>
-        <p class="links"><a href="[Link]">[Link]</a></p>
-      </article>
-      <!-- END OF BLOCK -->
+        <article class="entry">
+          <div class="entry-head">
+            <h3>techstars_ Startup Weekend 2026</h3>
+            <p class="meta-right"><time>2026</time></p>
+          </div>
+          <p class="subtitle">1st Place</p>
+          <p class="description">Won with Dough!, a social finance app that helps college students build savings habits by rewarding progress toward their goals. Now being built into a company.</p>
+        </article>
+        <article class="entry">
+          <div class="entry-head">
+            <h3>SDS From Insights to Outcomes Datathon 2026</h3>
+            <p class="meta-right"><time>Feb 2026</time></p>
+          </div>
+          <p class="subtitle">2nd Place</p>
+          <p class="description">&ldquo;The Retention Illusion&rdquo;: found first-session behaviors that predict 7-day retention across 400K+ events and 4,774 users.</p>
+          <p class="links"><a href="https://github.com/jrdn-sentosa/sds-datathon-retention-illusion">GitHub</a></p>
+        </article>
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Lucid Programming Competition</h3>
+            <p class="meta-right"><time>2024 &amp; 2025</time></p>
+          </div>
+          <p class="subtitle">3rd Place (2025)</p>
+          <p class="description">Competed in 2024 and placed 3rd in 2025.</p>
+        </article>
+        <article class="entry">
+          <div class="entry-head">
+            <h3>MLH Hackathons</h3>
+            <p class="meta-right"><time>2024 &ndash; 2026</time></p>
+          </div>
+          <p class="subtitle subtitle-long">HackNC 2024, 2025 &amp; 2026 &middot; Hack_NCState 2025 &amp; 2026 &middot; HooHacks 2025</p>
+          <p class="description">Built a project at each event; see Projects below.</p>
+        </article>
 
-      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
-      <article class="entry">
-        <div class="entry-head">
-          <h3>[Competition Name]</h3>
-          <p class="meta-right"><time>[Date]</time></p>
-        </div>
-        <p class="subtitle">[Award / Placement]</p>
-        <p class="description">[Short description]</p>
-        <p class="links"><a href="[Link]">[Link]</a></p>
-      </article>
-      <!-- END OF BLOCK -->
+      </div>
     </section>
 
-    <!-- ===================== EXPERIENCE ===================== -->
     <section id="experience" aria-labelledby="experience-title">
       <h2 id="experience-title">Experience</h2>
+      <div class="entries">
 
-      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
-      <article class="entry">
-        <div class="entry-head">
-          <h3>[Role]</h3>
-          <p class="meta-right"><time>[Dates]</time></p>
-        </div>
-        <p class="subtitle">[Company / Organization]</p>
-        <p class="meta">[Location]</p>
-        <ul class="bullets">
-          <li>[Bullet point: what you did and the result]</li>
-          <li>[Bullet point: what you did and the result]</li>
-          <li>[Bullet point: what you did and the result]</li>
-        </ul>
-      </article>
-      <!-- END OF BLOCK -->
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Co-Founder &amp; Technical Lead</h3>
+            <p class="meta-right"><time>Oct 2026 &ndash; Present</time></p>
+          </div>
+          <p class="subtitle">Dough! (early-stage startup)</p>
+          <p class="meta">North Carolina</p>
+          <ul class="bullets">
+            <li>Won 1st place at techstars_ Startup Weekend 2026 with a social finance app that rewards students for progress toward savings goals, and am now developing it into a company.</li>
+            <li>Validated the problem by interviewing 40+ students: 95% care about saving for emergencies, but 90% lack a dedicated account to do it.</li>
+            <li>Turning a weekend prototype into a full product as the team&rsquo;s sole CS student, designing the architecture and building a Progressive Web App with AI-assisted development.</li>
+            <li>Helped build the business case for a 19M-student market, including the business model, cost structure, and multi-year revenue projections.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Executive Vice President (President-Elect)</h3>
+            <p class="meta-right"><time>Aug 2026 &ndash; Present</time></p>
+          </div>
+          <p class="subtitle">AWS Student Builder Group at UNC Charlotte</p>
+          <p class="meta">Charlotte, NC</p>
+          <ul class="bullets">
+            <li>Helping lead club direction, events, and operations. Previously Vice-Captain of Operations and a founding member of the AWS Cloud Club (Jan &ndash; Aug 2026).</li>
+            <li>Built and managed the club&rsquo;s Discord platform and handled secretary duties, including meeting records.</li>
+            <li>Connected 100+ students with professionals from Amazon, AWS, Vanguard, Duke Energy, and others by co-organizing a networking event.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Vice President</h3>
+            <p class="meta-right"><time>Apr 2026 &ndash; Present</time></p>
+          </div>
+          <p class="subtitle">Association for Computing Machinery (ACM) at UNC Charlotte</p>
+          <p class="meta">Charlotte, NC</p>
+          <ul class="bullets">
+            <li>Broadened programming beyond weekly LeetCode to AI, cybersecurity, and career development, including an industry Q&amp;A with Wells Fargo engineers, an AI-in-industry workshop, and ICPC prep.</li>
+            <li>Co-organized a Resume Roast led by a senior software engineer to prepare members for the fall STEM Fair.</li>
+            <li>Grew membership through the student organization showcase and connected members to regional hackathons such as WolfHacks and HackNC.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Head of Digital Experience</h3>
+            <p class="meta-right"><time>Nov 2025 &ndash; Present</time></p>
+          </div>
+          <p class="subtitle">Variantz (APAWLOGY&trade; brand)</p>
+          <p class="meta">Singapore (Remote)</p>
+          <ul class="bullets">
+            <li>Built the company&rsquo;s website from the ground up on Wix Studio, acting as Product Owner to turn business requirements into technical implementation.</li>
+            <li>Reached an average Google position of 1.4 for brand searches, with organic search driving the largest share of online sales, through SEO and Generative Engine Optimization (schema markup, llms.txt, site architecture).</li>
+            <li>Found where shoppers drop off between product view, cart, and checkout using Hotjar heatmaps, recordings, and analytics, and guided UX fixes.</li>
+            <li>Opened new direct-sales channels with referral and custom discount code systems, plus a partner program that lets stores such as veterinary clinics offer their customers unique discounts.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Software Engineer Intern</h3>
+            <p class="meta-right"><time>Jun 2025 &ndash; Nov 2025</time></p>
+          </div>
+          <p class="subtitle">Variantz</p>
+          <p class="meta">Singapore (Hybrid)</p>
+          <ul class="bullets">
+            <li>Built a multi-platform mobile app for a new smart IoT product with Flutter and Dart, with a neumorphic UI and custom Figma assets.</li>
+            <li>Implemented user authentication, PostgreSQL database interactions, and device control interfaces.</li>
+            <li>Kept stakeholders informed with agile practices: weekly milestones, a structured progress log, and regular reviews.</li>
+            <li>Carried the app from planning and prototyping through testing, refinement, and deployment readiness.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Hospitality Ministry Volunteer</h3>
+            <p class="meta-right"><time>Jan 2010 &ndash; Present</time></p>
+          </div>
+          <p class="subtitle">Mother Teresa Catholic Church</p>
+          <p class="meta">Cary, NC</p>
+          <ul class="bullets">
+            <li>Greeter and Usher creating a welcoming environment for the parish community.</li>
+            <li>Organized meal kit assembly, monthly food drives, and pet supply collections for local families and animal shelters.</li>
+          </ul>
+        </article>
 
-      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
-      <article class="entry">
-        <div class="entry-head">
-          <h3>[Role]</h3>
-          <p class="meta-right"><time>[Dates]</time></p>
-        </div>
-        <p class="subtitle">[Company / Organization]</p>
-        <p class="meta">[Location]</p>
-        <ul class="bullets">
-          <li>[Bullet point: what you did and the result]</li>
-          <li>[Bullet point: what you did and the result]</li>
-          <li>[Bullet point: what you did and the result]</li>
-        </ul>
-      </article>
-      <!-- END OF BLOCK -->
+      </div>
     </section>
 
-    <!-- ===================== PROJECTS ===================== -->
     <section id="projects" aria-labelledby="projects-title">
       <h2 id="projects-title">Projects</h2>
+      <div class="entries">
 
-      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
-      <article class="entry">
-        <div class="entry-head">
-          <h3>[Project Name]</h3>
-        </div>
-        <!-- OPTIONAL: delete this figure if the project has no image.
-             Put images in the img/ folder and set src="img/your-file.png" -->
-        <figure class="project-image">
-          <img src="img/placeholder.svg" alt="[Describe the image, e.g. Screenshot of Project Name]" width="640" height="360" loading="lazy">
-        </figure>
-        <p class="description">[Short description]</p>
-        <ul class="tags" aria-label="Tech and tools">
-          <li>[Tech]</li>
-          <li>[Tool]</li>
-          <li>[Language]</li>
-        </ul>
-        <p class="links"><a href="[Link]">[Link]</a></p>
-      </article>
-      <!-- END OF BLOCK -->
+        <article class="entry">
+          <div class="entry-head">
+            <h3>JANUS</h3>
+            <p class="meta-right"><time>Oct 2026 &middot; MLH HackNC 2026</time></p>
+          </div>
+          <ul class="bullets">
+            <li>Team of 4 building a platform to remotely run scripts and monitor a PC from any phone or tablet, using control panels designed in a desktop Builder Studio.</li>
+            <li>Built the Progressive Web App client on Vercel so panels run on any device with no app store install.</li>
+            <li>Integrated Photon for iMessage-based control and Tiger Data for historical PC metrics dashboards.</li>
+            <li>Delivered an end-to-end prototype through spec-driven development, directing AI agents against up-front architecture specs.</li>
+          </ul>
+          <ul class="tags" aria-label="Tech and tools">
+            <li>TypeScript</li>
+            <li>Python</li>
+            <li>React</li>
+            <li>Electron</li>
+            <li>FastAPI</li>
+            <li>Tiger Data</li>
+            <li>Photon</li>
+            <li>Docker</li>
+            <li>Vercel</li>
+          </ul>
+          <p class="links"><a href="https://devpost.com/software/janus-48wo23">Devpost</a> &middot; <a href="https://github.com/VazirYaNazir/HackNC2026-Janus">GitHub</a></p>
+        </article>
 
-      <!-- COPY THIS BLOCK TO ADD ANOTHER ENTRY -->
-      <article class="entry">
-        <div class="entry-head">
-          <h3>[Project Name]</h3>
-        </div>
-        <p class="description">[Short description]</p>
-        <ul class="tags" aria-label="Tech and tools">
-          <li>[Tech]</li>
-          <li>[Tool]</li>
-          <li>[Language]</li>
-        </ul>
-        <p class="links"><a href="[Link]">[Link]</a></p>
-      </article>
-      <!-- END OF BLOCK -->
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Gacha Pulse</h3>
+            <p class="meta-right"><time>Sep 2026 &middot; Personal Project</time></p>
+          </div>
+          <ul class="bullets">
+            <li>Tested whether declining player sentiment predicts a game&rsquo;s shutdown with a dashboard tracking Steam reviews across 10 gacha games, 5 live and 5 end-of-service.</li>
+            <li>Built a 115K+ review dataset kept current by a daily GitHub Actions pipeline that upserts into Supabase with hash-based deduplication.</li>
+            <li>Classified sentiment at 83.8% accuracy (0.76 macro F1) with TF-IDF and logistic regression, and ranked live games&rsquo; shutdown risk with a transparent EoS-risk score.</li>
+            <li>Deployed both models as FastAPI services on Modal behind a Next.js dashboard on Vercel with Recharts and a gacha-style &ldquo;pull&rdquo; reveal.</li>
+          </ul>
+          <ul class="tags" aria-label="Tech and tools">
+            <li>TypeScript</li>
+            <li>Python</li>
+            <li>Next.js</li>
+            <li>Supabase</li>
+            <li>Scikit-Learn</li>
+            <li>FastAPI</li>
+            <li>Modal</li>
+            <li>Vercel</li>
+          </ul>
+          <p class="links"><a href="https://gacha-pulse.vercel.app/">Live Demo</a> &middot; <a href="https://github.com/jrdn-sentosa/gacha-pulse">GitHub</a></p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3>The Retention Illusion</h3>
+            <p class="meta-right"><time>Feb 2026 &middot; SDS Datathon &middot; 2nd Place</time></p>
+          </div>
+          <ul class="bullets">
+            <li>Identified first-session signals that predict 7-day retention for Zerve&rsquo;s notebook platform, analyzing 400K+ events across 4,774 users.</li>
+            <li>Re-engineered session boundaries with a 30-minute inactivity threshold, replacing unreliable native session IDs.</li>
+            <li>Handled a 12.3% class imbalance with logistic regression and decision trees; found engagement breadth outperformed any single feature, and 87.7% of users were never retained.</li>
+          </ul>
+          <ul class="tags" aria-label="Tech and tools">
+            <li>Python</li>
+            <li>Pandas</li>
+            <li>Scikit-Learn</li>
+            <li>Statsmodels</li>
+            <li>Jupyter</li>
+            <li>Zerve AI</li>
+          </ul>
+          <p class="links"><a href="https://github.com/jrdn-sentosa/sds-datathon-retention-illusion">GitHub</a></p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3>SlopChop</h3>
+            <p class="meta-right"><time>Feb 2026 &middot; MLH Hack_NCState 2026</time></p>
+          </div>
+          <ul class="bullets">
+            <li>Team of 3 building a mobile app that detects AI-generated misinformation inside social media feeds like X in real time.</li>
+            <li>Shipped to iOS and Android from one Expo (React Native) codebase.</li>
+            <li>Combined two AI text detectors and one AI image detector into a unified &ldquo;likely human,&rdquo; &ldquo;uncertain,&rdquo; or &ldquo;likely AI/scam&rdquo; verdict.</li>
+          </ul>
+          <ul class="tags" aria-label="Tech and tools">
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>React Native</li>
+            <li>Expo</li>
+            <li>FastAPI</li>
+            <li>PyTorch</li>
+            <li>HuggingFace</li>
+          </ul>
+          <p class="links"><a href="https://devpost.com/software/vyn">Devpost</a> &middot; <a href="https://github.com/VazirYaNazir/Hack_NCState2026-SlopChop">GitHub</a></p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Canopy</h3>
+            <p class="meta-right"><time>Oct 2025 &middot; MLH HackNC 2025</time></p>
+          </div>
+          <ul class="bullets">
+            <li>Team of 5 building a web app that finds the coolest, shadiest walking routes in the contiguous US from real-time temperature, wind, and tree canopy data.</li>
+            <li>Designed the backend optimization algorithm that weighs temperature, wind, and canopy density.</li>
+            <li>Integrated Google Maps, NOAA NWS, and MRLC Tree Canopy APIs, structuring data with NumPy.</li>
+          </ul>
+          <ul class="tags" aria-label="Tech and tools">
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Flask</li>
+            <li>Tailwind</li>
+            <li>NumPy</li>
+            <li>Rasterio</li>
+          </ul>
+          <p class="links"><a href="https://devpost.com/software/canopy-klybad">Devpost</a> &middot; <a href="https://github.com/VazirYaNazir/HackNC2025-Canopy">GitHub</a></p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3>OmniMouse</h3>
+            <p class="meta-right"><time>Mar 2025 &middot; MLH HooHacks 2025</time></p>
+          </div>
+          <ul class="bullets">
+            <li>Team of 4 turning a smartphone into a computer mouse, with cursor control through phone rotation and tilt.</li>
+            <li>Streamed gyroscope and click data from an Android app to a Flask server in real time using Retrofit.</li>
+            <li>Mapped device movement to desktop commands with PyAutoGUI.</li>
+          </ul>
+          <ul class="tags" aria-label="Tech and tools">
+            <li>Java</li>
+            <li>Python</li>
+            <li>Android SDK</li>
+            <li>Flask</li>
+            <li>PyAutoGUI</li>
+            <li>Retrofit</li>
+          </ul>
+          <p class="links"><a href="https://devpost.com/software/omnimouse">Devpost</a> &middot; <a href="https://github.com/VazirYaNazir/HooHacks2025-OmniMouse">GitHub</a></p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3>PDFinance</h3>
+            <p class="meta-right"><time>Feb 2025 &middot; MLH Hack_NCState 2025</time></p>
+          </div>
+          <ul class="bullets">
+            <li>Team of 4 building an AI-powered search tool that helps financial professionals extract insights from large document collections.</li>
+            <li>Parsed documents with PyPDF2, stored them locally in SQLite3, and generated context-aware answers with LangChain and the ChatGPT API.</li>
+            <li>Improved retrieval accuracy with a vector-based search system for relevance ranking.</li>
+          </ul>
+          <ul class="tags" aria-label="Tech and tools">
+            <li>Python</li>
+            <li>SQLite3</li>
+            <li>PyPDF2</li>
+            <li>Tkinter</li>
+            <li>LangChain</li>
+            <li>OpenAI</li>
+          </ul>
+          <p class="links"><a href="https://devpost.com/software/pdfinance">Devpost</a> &middot; <a href="https://github.com/VazirYaNazir/HackNCState2025-PDFinance">GitHub</a></p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Geographic Correlations to Executions</h3>
+            <p class="meta-right"><time>Nov &ndash; Dec 2024 &middot; Data Science Project</time></p>
+          </div>
+          <ul class="bullets">
+            <li>Delivered the data section of a research paper as Tech Lead: data cleaning, exploratory analysis, summary statistics, and visualizations.</li>
+            <li>Predicted state by region with logistic regression (One-vs-Rest) and decision trees, reaching precision up to 0.78 despite dataset imbalance.</li>
+            <li>Evaluated models with F1, recall, and ROC AUC to identify limits in predictive capability.</li>
+          </ul>
+          <ul class="tags" aria-label="Tech and tools">
+            <li>Python</li>
+            <li>Pandas</li>
+            <li>Scikit-Learn</li>
+            <li>Seaborn</li>
+            <li>Google Colab</li>
+          </ul>
+          <p class="links"><a href="https://github.com/jrdn-sentosa/Geographic_Correlations_to_Executions">GitHub</a></p>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Optitime</h3>
+            <p class="meta-right"><time>Nov 2024 &middot; MLH HackNC 2024</time></p>
+          </div>
+          <ul class="bullets">
+            <li>Team of 5 building a responsive web app to visualize and manage a group&rsquo;s 24-hour availability across devices.</li>
+            <li>Wrote a custom JavaScript API for data aggregation with Firebase Firestore for storage.</li>
+            <li>Built a dynamically color-scaled heatmap and shareable sessions with random 4-digit codes.</li>
+          </ul>
+          <ul class="tags" aria-label="Tech and tools">
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Firebase</li>
+          </ul>
+          <p class="links"><a href="https://devpost.com/software/optitime">Devpost</a> &middot; <a href="https://github.com/VazirYaNazir/HackNC2024-OptiTime">GitHub</a></p>
+        </article>
+
+      </div>
     </section>
 
   </main>
 
   <footer class="site-footer">
+    <svg class="footer-skyline" viewBox="0 230 1200 110" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <use href="#city"/>
+    </svg>
     <div class="container">
       <p>&copy; <span id="year">2026</span> Jordan Sentosa</p>
     </div>
